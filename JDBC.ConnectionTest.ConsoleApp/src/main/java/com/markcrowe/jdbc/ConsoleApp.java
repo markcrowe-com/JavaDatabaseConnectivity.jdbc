@@ -3,8 +3,6 @@
  */
 package com.markcrowe.jdbc;
 
-import com.markcrowe.jdbc.ConnectionStringBuilder;
-import com.markcrowe.jdbc.JdbcConnectionTest;
 import java.util.Scanner;
 
 /**
@@ -28,21 +26,16 @@ public class ConsoleApp
 			String userinput = consoleScanner.next();
 			switch(userinput)
 			{
-				case exit:
+				case exit ->
 					exitApplication();
-					break;
-				case help:
+				case help ->
 					printInstructions();
-					break;
-				case mysql:
+				case mysql ->
 					testDefaultMySqlRootConnectionValues();
-					break;
-				case test:
+				case test ->
 					testDatabase();
-					break;
-				default:
+				default ->
 					handleUnrecognizedCommand(userinput);
-					break;
 			}
 		}
 		while(contineRunningApp);
